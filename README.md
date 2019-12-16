@@ -15,4 +15,4 @@ The accelerometer checks the current position of the KL05 board attached to the 
 
 The components we use are FRDM-KL05 evaluation board equipped with accelerometer, mini photovoltaic cell, two servos and four photoresistors.
 
-![DL Schemat blokowy](https://user-images.githubusercontent.com/48928449/70871392-276df480-1f9f-11ea-8708-1818eb22f4f7.jpg)
+![DL Schemat blokowy](https://user-images.githubusercontent.com/48928449/70871575-b3cce700-1fa0-11ea-99dd-f41ecfaf1cb3.jpg)
