@@ -5,7 +5,7 @@
 The main goal of the project is to build a solar tracker with two operating modes:
 
 - The first mode uses four photoresistors, which in special directional tubes measure the intensity of light at selected points. A miniature photovoltaic cell mounted on two servos rotates depending on the location of the photoresistor showing the strongest light intensity (use on cloudy days).
-- The second mode uses the accelerometer built into KL05. We will use the algorithm indicating current predicted position of the sun followed by our tracker (use on sunny days).
+- The second mode uses the accelerometer built into KL05. We will create the algorithm indicating current predicted position of the sun followed by our tracker (use on sunny days).
 
 ### Problem analysis
 
