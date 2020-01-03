@@ -1,5 +1,5 @@
-#ifndef MMA8451_H_
-#define MMA8451_H_
+#ifndef mma8451_h
+#define mma8451_h
 
 #include "i2c.h"
 
