@@ -13,8 +13,8 @@ void pwmInitialize(){
 	TPM0->SC &= ~TPM_SC_CMOD_MASK;				// CMOD 0, LPTPM counter is disabled
 	TPM0->SC |= TPM_SC_PS(2); 						// Clock divider, 2 = clk/4
 
-	TPM0->MOD = 1629; 										// 8149 for 1 sec. Period = modulo + 1, for servo period = 20ms 
-
+	TPM0->MOD = 162; 										// 8149 for 1 sec. Period = modulo + 1, for servo period = 20ms 
+	
 	TPM0->CONTROLS[1].CnSC |= (TPM_CnSC_MSB_MASK | TPM_CnSC_ELSB_MASK); // Center-aligned PWM High-pulse
 
 	TPM0->SC |= TPM_SC_CMOD(1);
@@ -33,4 +33,12 @@ void pwmServo1(uint16_t pulseWidth){
 	TPM0->SC |= TPM_SC_CMOD(0); 											// 0 = LPTPM counter is disabled
 	TPM0->CONTROLS[1].CnV = TPM_CnV_VAL(pulseWidth); 	// Pulse width
 	TPM0->SC |= TPM_SC_CMOD(1); 											// 1 = LPTPM counter increments on every LPTPM counter clock
+}
+
+void delay_mc(uint32_t value){
+	uint32_t delay, x;
+	
+	for(x=0; x < value; x++){
+		for(delay=0; delay < 10000; delay++){};
+	}
 }

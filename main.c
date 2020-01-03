@@ -12,8 +12,8 @@ int main(){
 	
 	//PWM
 	pwmInitialize();
-	pwmServo1(1467); // 10% duty cycle
-	
+	pwmServo1(146); // 10% duty cycle
+
 	//ACCELEROMETER
 	accelInitialize();
 	/* actually not working 
