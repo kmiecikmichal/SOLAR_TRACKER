@@ -2,6 +2,7 @@
 #define mma8451_h
 
 #include "i2c.h"
+#include "extra.h"
 
 #define MMA8451_I2C_ADDRESS 0x1D<<1 // gives 0x3A = read or 0x3B = write
 
@@ -51,6 +52,8 @@
 #define OFF_Z_REG 0x31
 
 void accelInitialize(void);
-uint16_t accelRead(void);
+uint8_t accelReadX(void);
+uint8_t accelReadY(void);
+uint8_t accelReadZ(void);
 
 #endif 
