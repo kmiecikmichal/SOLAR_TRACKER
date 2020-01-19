@@ -19,7 +19,6 @@ void pwmInitialize(){
 	TPM0->CONTROLS[2].CnSC |= (TPM_CnSC_MSB_MASK | TPM_CnSC_ELSB_MASK); // Center-aligned PWM High-pulse CH1
 	TPM0->CONTROLS[3].CnSC |= (TPM_CnSC_MSB_MASK | TPM_CnSC_ELSB_MASK); // Center-aligned PWM High-pulse CH2
 
-
 	TPM0->SC |= TPM_SC_CMOD(1);
 }
 
@@ -48,16 +47,16 @@ void pwmServo2(uint16_t pulseWidth){
 }
 
 void servoWorkTest (void){
-	delay_mc(1000);
+	delay(1000);
 	pwmServo1(3.95);	// Servo position -90deg
 	pwmServo2(3.95);
-	delay_mc(1000); 
+	delay(1000); 
 	pwmServo1(19.95); // Servo position 90deg
 	pwmServo2(19.95);
-	delay_mc(1000);
+	delay(1000);
 	pwmServo1(3.95);	// Servo position -90deg
 	pwmServo2(3.95);
-	delay_mc(1000); 
+	delay(1000); 
 	pwmServo1(19.95); // Servo position 90deg
 	pwmServo2(19.95);
 }
@@ -66,7 +65,7 @@ void servoDegreeTest (void){
 	uint32_t x = 3.95; // Start position, -90 deg
 	
 	while(x <= 19.95){
-		delay_mc(1000);
+		delay(1000);
 		pwmServo1(x);
 		pwmServo2(x);
 		x += 1;

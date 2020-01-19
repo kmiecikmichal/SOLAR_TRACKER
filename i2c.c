@@ -8,13 +8,11 @@ void i2cInitialize(void){
 	PORTB->PCR[3] |= PORT_PCR_MUX(2); // I2C0 SCL
 	PORTB->PCR[4] |= PORT_PCR_MUX(2); // I2C0 SDA
 
-	//I2C0->F |= I2C_F_MULT(2);					// mul
-	I2C0->F = I2C_F_ICR(14);					// baud rate = fbus(24MHz) / 2^mul * ICR
+	I2C0->F = I2C_F_ICR(14);					// baud rate settings
 	
 	I2C0->C1 |= I2C_C1_IICEN_MASK;		// Enable I2C
 	I2C0->C1 |= I2C_C1_IICIE_MASK;		// Set to master mode
 	I2C0->C2 |= I2C_C2_HDRS_MASK;			// High drive mode
-	
 }
 
 void i2cWait(void){
@@ -45,7 +43,6 @@ uint8_t i2cReadSingleByte(uint8_t dev, uint8_t address){
 	I2C_M_START; 					//send start
 	I2C0->D = dev; 				//send dev address 
 	WAIT;									//wait for completion
-	//I2C_TRAN; 						//set to transmit mode 
 	I2C0->D = address; 		//send read address 
 	WAIT;									//wait for completion 
 	I2C_M_RSTART;					//repeated start 
@@ -59,5 +56,4 @@ uint8_t i2cReadSingleByte(uint8_t dev, uint8_t address){
 	data = I2C0->D; 			//read data
 	
 	return data;
-
 }

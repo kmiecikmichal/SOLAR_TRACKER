@@ -3,6 +3,7 @@
 
 #include "i2c.h"
 #include "extra.h"
+#include "uart.h"
 
 #define MMA8451_I2C_ADDRESS 0x1D<<1 // gives 0x3A = read or 0x3B = write
 
@@ -55,5 +56,6 @@ void accelInitialize(void);
 uint8_t accelReadX(void);
 uint8_t accelReadY(void);
 uint8_t accelReadZ(void);
+void accelReadXYZ(void);
 
 #endif 
