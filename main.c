@@ -2,29 +2,47 @@
 #include "uart.h"
 #include "i2c.h"
 #include "pwm.h"
+#include "adc.h"
+#include "extra.h"
 #include "mma8451.h"
 
 int main(){
-	//uint16_t result;
+	
+	uint8_t result;
 
-	//UART
+	// UART
 	uartInitialize();
-	
-	//PWM
-	pwmInitialize();
-	pwmServo1(146); // 10% duty cycle
 
-	//ACCELEROMETER
-	accelInitialize();
-	/* actually not working 
-	result = accelRead();
+	// PWM
+	pwmInitialize();
+	//servoDegreeTest();
+
+	// ADC
+	adcInitialize();
+	//result = adcMeasureLight2();
 	
-	// int to string
-	char str[8];
-  sprintf(str, "%u", result);
-	uartSendString(str);
-	*/ 
+	// ACCELEROMETER
+	accelInitialize();
+
 	
 	while(1){
+		/*
+		result = adcMeasureLight2();
+		if( result < 1000){
+			pwmServo1(3.95);
+			delay(1000);
+		}
+		else{
+			pwmServo1(19.95);
+			delay(1000);
+		}
+		*/
+		
+		//accelReadXYZ();
+		//adcTest();
+		result = adcPhotoresistorsHandler();
+		uartSendString(" ");
+		decToStringAndSendUart(result);
+	
 	}
 }

@@ -6,7 +6,7 @@ void uartInitialize(void){
 	SIM->SCGC5 |= SIM_SCGC5_PORTB_MASK;
 	
 	PORTB->PCR[1] |= PORT_PCR_MUX(2);			// 2 because it's 2nd alternative function of this pin
-	PORTB->PCR[2] |= PORT_PCR_MUX(2);
+ 	PORTB->PCR[2] |= PORT_PCR_MUX(2);
 	
 	SIM->SOPT2 |= SIM_SOPT2_UART0SRC(1);	// 1 = 48 MHz
 	

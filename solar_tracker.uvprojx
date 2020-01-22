@@ -407,6 +407,26 @@
               <FileType>1</FileType>
               <FilePath>.\pwm.c</FilePath>
             </File>
+            <File>
+              <FileName>extra.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\extra.c</FilePath>
+            </File>
+            <File>
+              <FileName>adc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\adc.c</FilePath>
+            </File>
+            <File>
+              <FileName>mode1.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\mode1.c</FilePath>
+            </File>
+            <File>
+              <FileName>mode2.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\mode2.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
