@@ -5,10 +5,11 @@
 #include "adc.h"
 #include "extra.h"
 #include "mma8451.h"
+#include "mode1.h"
 
 int main(){
 	
-	//uint8_t result;
+	uint8_t result;
 
 	// UART
 	uartInitialize();
@@ -38,6 +39,9 @@ int main(){
 		}
 		*/
 		
-		accelReadXYZ();
+		//accelReadXYZ();
+		//adcTest();
+		//mode1();
+		pwmServo1(30000);
 	}
 }
