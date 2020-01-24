@@ -125,7 +125,7 @@ uint8_t adcPhotoresistorsHandler(void){
 	
 	// AVERAGING 
 	
-	for(i = 0; i < 10; i++){
+	for(i = 0; i < 50; i++){
 		average1 += adcMeasureLight1();
 		average2 += adcMeasureLight2();
 		average3 += adcMeasureLight3();
@@ -134,10 +134,10 @@ uint8_t adcPhotoresistorsHandler(void){
 		delay(1000);
 	}
 	
-	average1 /= 10;
-	average2 /= 10;
-	average3 /= 10;
-	average4 /= 10;
+	average1 /= 50;
+	average2 /= 50;
+	average3 /= 50;
+	average4 /= 50;
 	
 	// COMPARING
 	

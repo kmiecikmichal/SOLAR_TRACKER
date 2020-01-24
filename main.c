@@ -5,6 +5,7 @@
 #include "adc.h"
 #include "extra.h"
 #include "mma8451.h"
+#include "mode1.h"
 
 int main(){
 	
@@ -23,8 +24,10 @@ int main(){
 	
 	// ACCELEROMETER
 	accelInitialize();
-
 	
+	// SERVOS
+	servoStartPosition();
+
 	while(1){
 		/*
 		result = adcMeasureLight2();
@@ -40,9 +43,7 @@ int main(){
 		
 		//accelReadXYZ();
 		//adcTest();
-		result = adcPhotoresistorsHandler();
-		uartSendString(" ");
-		decToStringAndSendUart(result);
-	
+		mode1();
+		
 	}
 }
