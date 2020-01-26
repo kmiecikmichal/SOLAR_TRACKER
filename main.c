@@ -5,6 +5,7 @@
 #include "adc.h"
 #include "extra.h"
 #include "mma8451.h"
+#include "mode1.h"
 
 int main(){
 	
@@ -24,6 +25,12 @@ int main(){
 	// ACCELEROMETER
 	accelInitialize();
 
+	int table1[2][2] = {{1,2},{5,6}};
+	int table2[2] = {3,4};
+	int *table3[2] = {table1, table2};
+	uartSendString("as");
+	decToStringAndSendUart(table3[0][2]);
+	
 	
 	while(1){
 		/*
@@ -38,6 +45,11 @@ int main(){
 		}
 		*/
 		
-		accelReadXYZ();
+		//accelReadXYZ();
+		//adcTest();
+		//mode1();
+		
+		
+		
 	}
 }
