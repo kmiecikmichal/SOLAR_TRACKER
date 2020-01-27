@@ -50,7 +50,10 @@
 #define CTRL_REG5_REG 0x2E
 #define OFF_X_REG 0x2F
 #define OFF_Y_REG 0x30
-#define OFF_Z_REG 0x31
+#define OFF_Z_REG 
+
+extern uint8_t actualServo1Position;
+extern uint8_t actualServo2Position;
 
 void accelInitialize(void);
 uint8_t accelReadX(void);

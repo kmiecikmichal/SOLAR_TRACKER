@@ -1,5 +1,8 @@
 #include "mma8451.h"
 
+uint8_t actualServo1Position = 45; // pulse width values here
+uint8_t actualServo2Position = 45;
+
 void accelInitialize(void){
 	
 	i2cInitialize();

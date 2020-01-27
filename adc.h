@@ -12,6 +12,5 @@ float adcMeasureLight2(void);
 float adcMeasureLight3(void);
 float adcMeasureLight4(void);
 void adcTest(void);
-uint8_t adcPhotoresistorsHandler(void);
 
 #endif
